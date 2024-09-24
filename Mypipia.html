@@ -1,0 +1,155 @@
+# Saving the provided HTML code to an HTML file for the user to download
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPipia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #218838;
+        }
+        .language-switcher {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-switcher img {
+            width: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MyPipia</h1>
+    </header>
+
+    <div class="language-switcher">
+        <img src="flags/georgia.png" alt="Georgian">
+        <img src="flags/russia.png" alt="Russian">
+        <img src="flags/azerbaijan.png" alt="Azerbaijani">
+        <img src="flags/turkey.png" alt="Turkish">
+        <img src="flags/uzbekistan.png" alt="Uzbek">
+        <img src="flags/kazakhstan.png" alt="Kazakh">
+    </div>
+
+    <div class="form-container">
+        <h2>Let us know where your vehicle is, and we will find a load for you</h2>
+
+        <form action="https://example.com/submit-form" method="POST">
+            <div class="form-group">
+                <label for="city">City where your vehicle is located:</label>
+                <input type="text" id="city" name="city" placeholder="Start typing the city" list="cities">
+                <datalist id="cities">
+                    <option value="Tbilisi">
+                    <option value="Moscow">
+                    <option value="Baku">
+                    <option value="Istanbul">
+                    <option value="Tashkent">
+                    <option value="Almaty">
+                </datalist>
+            </div>
+
+            <div class="form-group">
+                <label for="arrival-date">Date when the vehicle will arrive (if not currently there):</label>
+                <input type="date" id="arrival-date" name="arrival_date">
+            </div>
+
+            <div class="form-group">
+                <label for="vehicles-count">Number of vehicles:</label>
+                <select id="vehicles-count" name="vehicles_count">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-type">Vehicle type:</label>
+                <input type="checkbox" id="refrigerator" name="vehicle_type" value="Refrigerator"> Refrigerator<br>
+                <input type="checkbox" id="standard_100" name="vehicle_type" value="Standard 100"> Standard 100 cubic meters<br>
+                <input type="checkbox" id="standard_120" name="vehicle_type" value="Standard 120"> Standard 120 cubic meters<br>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">WhatsApp Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="+995568724874">
+            </div>
+
+            <div class="form-group">
+                <label for="additional-info">Additional information:</label>
+                <textarea id="additional-info" name="additional_info" rows="4" placeholder="Any extra details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+"""
+
+# Saving the HTML content to a file
+file_path = "/mnt/data/mypipia_website.html"
+with open(file_path, "w") as file:
+    file.write(html_content)
+
+file_path

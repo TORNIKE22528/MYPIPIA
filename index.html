@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipia Transport</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pipia Transport - Водительская форма</h1>
+        <form action="#" method="POST">
+            <label for="name">Ваше имя:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="location_now">Текущее местоположение:</label>
+            <input type="text" id="location_now" name="location_now" required>
+
+            <label for="location_future">Местоположение через 3/5 дней:</label>
+            <input type="text" id="location_future" name="location_future" required>
+
+            <label for="truck_type">Тип машины:</label>
+            <input type="text" id="truck_type" name="truck_type" required>
+
+            <label for="comments">Дополнительные комментарии:</label>
+            <textarea id="comments" name="comments"></textarea>
+
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
